@@ -1,0 +1,25 @@
+{
+  "name": "hugo-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Package-Papers/Hugo-Theme.git"
+  },
+  "author": "Ochawin A., Austin M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Package-Papers/Hugo-Theme/issues"
+  },
+  "homepage": "https://github.com/Package-Papers/Hugo-Theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.22",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0"
+  }
+}
