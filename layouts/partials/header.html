@@ -1,8 +1,6 @@
 <head>
-  <div class="flex justify-between items-center bg-white dark:bg-slate-900 p-4 transition-colors">
+  <div class="flex justify-between items-center p-4 default-darkmode-item">
     <h1 class="text-center font-bold text-2xl text-black dark:text-blue-100 w-full transition-colors">{{ .Site.Title }}</h1>
-    <button id="theme-toggle" class="text-sm font-bold py-1 px-2 rounded text-black dark:text-blue-100 hover:bg-blue-100 dark:hover:bg-blue-950 transition-colors">
-      Toggle
-    </button>
+    {{ partial "darkmode-button.html" . }}
   </div>
 </head>
