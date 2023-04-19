@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body class="bg-gray-900">
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+    <body>
+        <div class="bg-white dark:bg-gray-900 min-h-screen transition-colors">
+            {{- partial "header.html" . -}}
+            <div id="content">
+            {{- block "main" . }}{{- end }}
+            </div>
+            {{- partial "footer.html" . -}}
         </div>
-        {{- partial "footer.html" . -}}
+        {{- partial "scripts.html" . -}}
     </body>
 </html>

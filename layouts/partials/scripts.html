@@ -1,0 +1,2 @@
+{{ $themeSwitcher := resources.Get "js/theme-switcher.js" | resources.Minify }}
+<script src="{{ $themeSwitcher.RelPermalink }}" defer></script>
