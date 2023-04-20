@@ -1,25 +1,31 @@
+{{/*  Sidebar  */}}
 <aside class="min-h-screen h-full bg-white absolute top-0 left-0 bottom-0 w-[12.5%] bg-slate-300 border-r-2 border-r-slate-400">
   
+  {{/*  Title  */}}
   <div class=" bg-white flex text-black text-xl font-semibold border-b-2 border-b-slate-400 items-center h-16 justify-center">
     <a>
       Package Papers
     </a>
   </div>
 
-  <div class="h-full bg-slate-30">
+  {{/*  Nav menu (loaded from config.toml) */}}
+  <div class="h-full bg-slate-200">
     <div class="h-[75%]">
       <ul class="flex flex-col list-none">
         {{ range .Site.Params.sidebar.menu }}
           <li>
-            <a href="{{ .url }}" class="bg-slate-200 flex flex-row">
-              <span>{{ .name }}</span>
+            <a 
+            href="{{ if not .header }}{{ .url }}{{ else }}#{{ end }}" 
+            class="flex flex-row {{ if .header }} font-semibold pointer-events-none cursor-default {{ else }} pl-5 hover:bg-slate-100 {{ end }}">
+              <span class="{{ if .header }} text-base {{ else }} text-sm {{ end }}">{{ .name }}</span>
             </a>
           </li>
         {{ end }}
       </ul>      
     </div>
+
+    {{/*  Side bar footer  */}}
     <div class="h-auto border-t-2 border-t-slate-400">
-    
     </div>
   </div>
 
