@@ -8,10 +8,10 @@
 
   <div class="h-full bg-slate-30">
     <div class="h-[75%]">
-      <ul class="flex flex-col gap-1 list-none">
+      <ul class="flex flex-col list-none">
         {{ range .Site.Params.sidebar.menu }}
           <li>
-            <a href="{{ .url }}" class=" rounded-md bg-slate-200 flex flex-row">
+            <a href="{{ .url }}" class="bg-slate-200 flex flex-row">
               <span>{{ .name }}</span>
             </a>
           </li>
