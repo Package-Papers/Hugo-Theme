@@ -1,15 +1,15 @@
 {{/*  Sidebar  */}}
-<aside class="min-h-screen h-full bg-white absolute top-0 left-0 bottom-0 w-[12.5%] bg-slate-300 border-r-2 border-r-slate-400">
+<aside class="min-h-screen h-full w-[12.5%] relative border-r-2 border-r-slate-400 flex flex-col flex-shrink-0 default-darkmode-item">
   
   {{/*  Title  */}}
-  <div class=" default-darkmode-item flex text-black text-xl font-semibold border-b-2 border-b-slate-400 items-center h-16 justify-center">
-    <a class="default-darkmode-text">
+  <div class="default-darkmode-item flex text-black text-xl font-semibold border-b-2 border-b-slate-400 items-center h-16 justify-center">
+    <a class="default-darkmode-text truncate">
       Package Papers
     </a>
   </div>
 
   {{/*  Nav menu (loaded from config.toml) */}}
-  <div class="h-full default-darkmode-item">
+  <div class="h-full default-darkmode-item flex flex-col">
     <div class="h-[75%]">
       <ul class="flex flex-col list-none">
         {{ range .Site.Params.sidebar.menu }}
@@ -17,15 +17,15 @@
             <a 
             href="{{ if not .header }}{{ .url }}{{ else }}#{{ end }}" 
             class="flex flex-row {{ if .header }} font-semibold pointer-events-none cursor-default {{ else }} pl-5 hover:bg-slate-100 dark:hover:bg-slate-700 {{ end }}">
-              <span class="text-black dark:text-white transition-colors {{ if .header }} text-base {{ else }} text-sm {{ end }}">{{ .name }}</span>
+              <span class="truncate text-black dark:text-white transition-colors {{ if .header }} text-base {{ else }} text-sm {{ end }}">{{ .name }}</span>
             </a>
           </li>
         {{ end }}
-      </ul>      
-    </div>
+      </ul>     
+    </div> 
 
     {{/*  Side bar footer  */}}
-    <div class="h-auto border-t-2 border-t-slate-400 justify-center items-c">
+    <div class="absolute bottom-0 h-[25%] border-t-2 border-t-slate-400 justify-center w-full">
       {{- partial "darkmode-button.html" . -}}
     </div>
   </div>
