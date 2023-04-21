@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 .default-darkmode-item {
-  @apply bg-white dark:bg-gray-900 transition-colors;
+  @apply bg-slate-300 dark:bg-gray-900 transition-colors;
 }
+
+.default-darkmode-item-2 {
+  @apply bg-slate-200 dark:bg-gray-800 transition-colors;
+}
+
+.default-darkmode-text {
+  @apply text-black dark:text-white transition-colors;
+}
+
