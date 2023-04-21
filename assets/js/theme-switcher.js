@@ -12,6 +12,3 @@ toggleButton.addEventListener('click', () => {
   setTheme(currentTheme);
 });
 
-// Apply saved theme on page load
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme || 'light');

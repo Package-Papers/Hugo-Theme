@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
+
     <body class="flex relative h-full min-h-screen">
-        {{/*  <div class="min-h-screen bg-white dark:bg-gray-800 transition-colors flex">  */}}
+        <script>
+            savedTheme = localStorage.getItem('theme') || 'dark';
+            document.body.classList.toggle('dark', savedTheme === 'dark');
+        </script>
+
         {{- partial "sidebar.html" . -}}
 
+        {{/*  Content  */}}
         <div class="flex h-screen w-full default-darkmode-item-2 overflow-y-auto">  
         {{- block "main" . }}{{- end }}
         </div>
-            {{/*  </div>  */}}
+
+
         {{- partial "footer.html" . -}}
-        {{/*  </div>  */}}
         {{- partial "scripts.html" . -}}
     </body>
 </html>
