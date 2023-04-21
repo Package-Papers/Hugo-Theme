@@ -2,7 +2,7 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
-        <div class="min-h-screen default-darkmode-item">
+        <div class="min-h-screen bg-white dark:bg-gray-800 transition-colors">
             {{- partial "sidebar.html" . -}}
             <div id="content">
             {{- block "main" . }}{{- end }}
