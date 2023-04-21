@@ -1,16 +1,15 @@
 {{ define "main" }}
 <article class="px-20 py-14">
-
   {{/*  Title  */}}
-  <h1 class="default-darkmode-text text-[48px] font-semibold">{{ .Title }}</h1>
+  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">{{ .Title }}</h1>
 
   {{/*  Date, Author  */}}
   <small class="text-sm pl-1 text-slate-500 dark:text-gray-400">{{ .Params.date.Format "02 Jan 2006" }}, {{ .Params.Author }}</small>
 
   {{/*  Content  */}}
-  <section class="pt-10 default-darkmode-text">
-    {{ .Content }}
+  <section class="pt-10 pb-16 prose dark:prose-invert transition-colors prose-base">
+      {{ .Content }}
   </section>
-  
 </article>
+
 {{ end }}

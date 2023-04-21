@@ -11,7 +11,7 @@
         {{- partial "sidebar.html" . -}}
 
         {{/*  Content  */}}
-        <div class="flex h-screen w-full default-darkmode-item-2 overflow-y-auto">  
+        <div class="flex h-screen w-full default-darkmode-item-2 overflow-y-auto overscroll-contain">  
         {{- block "main" . }}{{- end }}
         </div>
 

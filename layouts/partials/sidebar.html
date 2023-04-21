@@ -11,6 +11,14 @@
   {{/*  Nav menu (loaded from config.toml) */}}
   <div class="h-full default-darkmode-item flex flex-col">
     <div class="h-[75%]">
+      
+      {{ if and (.IsPage) (eq .Type "posts") }}
+      
+      <a href="{{ .Page.RelPermalink }}/#" class="default-darkmode-text">Top</a>
+      <div class="default-darkmode-text">{{ .TableOfContents }}</div>
+      <a href="/posts" class="default-darkmode-text">Back</a>
+
+      {{ else }}
       <ul class="flex flex-col list-none">
         {{ range .Site.Params.sidebar.menu }}
           <li>
@@ -22,6 +30,7 @@
           </li>
         {{ end }}
       </ul>     
+      {{ end }}
     </div> 
 
     {{/*  Side bar footer  */}}
