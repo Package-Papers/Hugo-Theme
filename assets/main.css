@@ -14,3 +14,10 @@
   @apply text-black dark:text-white transition-colors;
 }
 
+.prose-darkmode {
+  @apply prose dark:prose-invert transition-colors;
+}
+
+.pointer-ignore {
+  @apply pointer-events-none cursor-default;
+}

@@ -2,9 +2,15 @@
 <article class="px-20 py-14">
     {{ range .Pages }}
     <section class="project">
-      <h3><a href="{{ .RelPermalink }}" class="default-darkmode-text">{{ .Title }}, {{ .Params.date.Format "02 Jan 2006" }}, {{ .Params.Author }}</a></h3>
+      <a href="{{ .RelPermalink }}" class="default-darkmode-text">
+        {{ .Title }}, {{ .Params.date.Format "02 Jan 2006" }},
+        {{ range $index, $author := .Params.authors }}
+        {{ if $index }}, {{ end }}
+        {{ $fmt_author := replace (lower .) " " "-" }}
+        {{- partial "author_abbrev" $author -}}
+      {{ end }}
+      </a>
     </section>
     {{ end }}
 </article>
-
 {{ end }}

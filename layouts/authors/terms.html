@@ -1,0 +1,10 @@
+{{/*  Author Listing Page  */}}
+{{ define "main" }}
+
+<ul>
+  {{ range .Site.Taxonomies.authors }}
+      <li><a href="{{ .Page.RelPermalink }}" class="prose-darkmode">{{ .Page.Title }}</a></li>
+  {{ end }}
+</ul>
+
+{{ end }}

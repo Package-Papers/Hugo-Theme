@@ -3,7 +3,7 @@
   
   {{/*  Title  */}}
   <div class="default-darkmode-item flex text-black text-xl font-semibold border-b-2 border-b-slate-400 items-center h-16 justify-center">
-    <a class="default-darkmode-text truncate">
+    <a class="truncate default-darkmode-text text-xl">
       Package Papers
     </a>
   </div>
@@ -12,24 +12,40 @@
   <div class="h-full default-darkmode-item flex flex-col">
     <div class="h-[75%]">
       
-      {{ if and (.IsPage) (eq .Type "posts") }}
+      {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
+      {{ if $isPostPage }}
       
-      <a href="{{ .Page.RelPermalink }}/#" class="default-darkmode-text">Top</a>
-      <div class="default-darkmode-text">{{ .TableOfContents }}</div>
-      <a href="/posts" class="default-darkmode-text">Back</a>
+        <a href="{{ .Page.RelPermalink }}/#" class="default-darkmode-text">Top</a>
+        <div class="default-darkmode-text">{{ .TableOfContents }}</div>
+        <a href="/posts" class="default-darkmode-text">Back</a>
 
       {{ else }}
-      <ul class="flex flex-col list-none">
-        {{ range .Site.Params.sidebar.menu }}
+        <ul class="flex flex-col list-none">
+          {{ range .Site.Params.sidebar.menu }}
+            <li>
+              <a 
+              href="{{ if not .header }}{{ .url }}{{ else }}#{{ end }}" 
+              class="flex flex-row {{ if .header }} font-semibold pointer-events-none cursor-default {{ else }} pl-5 hover:bg-slate-100 dark:hover:bg-slate-700 {{ end }}">
+                <span class="truncate prose-darkmode {{ if .header }} text-base {{ else }} text-sm {{ end }}">{{ .name }}</span>
+              </a>
+            </li>
+          {{ end }}
+        </ul>     
+
+        {{/*  Authors  */}}
+        <ul>
           <li>
-            <a 
-            href="{{ if not .header }}{{ .url }}{{ else }}#{{ end }}" 
-            class="flex flex-row {{ if .header }} font-semibold pointer-events-none cursor-default {{ else }} pl-5 hover:bg-slate-100 dark:hover:bg-slate-700 {{ end }}">
-              <span class="truncate text-black dark:text-white transition-colors {{ if .header }} text-base {{ else }} text-sm {{ end }}">{{ .name }}</span>
-            </a>
+            <span class="truncate prose-darkmode pointer-ignore font-semibold">AUTHORS</span>
           </li>
-        {{ end }}
-      </ul>     
+          {{ range .Site.Taxonomies.authors }}
+              <li>
+                <a href="{{ .Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
+                {{- partial "author_abbrev" .Page.Title }}
+                </a>
+              </li>
+          {{ end }}
+        </ul>
+
       {{ end }}
     </div> 
 
