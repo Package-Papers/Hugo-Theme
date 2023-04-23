@@ -32,19 +32,22 @@
           {{ end }}
         </ul>     
 
-        {{/*  Authors  */}}
-        <ul>
-          <li>
-            <span class="truncate prose-darkmode pointer-ignore font-semibold">AUTHORS</span>
-          </li>
-          {{ range .Site.Taxonomies.authors }}
-              <li>
-                <a href="{{ .Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
-                {{- partial "author_abbrev" .Page.Title }}
-                </a>
-              </li>
-          {{ end }}
-        </ul>
+        {{/*  Does not render if there are no authors  */}}
+        {{ if not (eq (len .Site.Taxonomies.authors) 0) }}
+          {{/*  Authors  */}}
+          <ul>
+            <li>
+              <span class="truncate prose-darkmode pointer-ignore font-semibold">AUTHORS</span>
+            </li>
+            {{ range .Site.Taxonomies.authors }}
+                <li>
+                  <a href="{{ .Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
+                  {{- partial "author_abbrev" .Page.Title }}
+                  </a>
+                </li>
+            {{ end }}
+          </ul>
+        {{ end }}
 
       {{ end }}
     </div> 
