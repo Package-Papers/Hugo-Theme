@@ -1,4 +1,11 @@
 {{ define "main" }}
+<section>
+  <ul>
+    {{ range .Site.Taxonomies.tags }}
+      <li class="text-white"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+    {{ end }}
+  </ul>
+</section>
 <article class="px-20 py-14">
 
     {{ $posts := (where .Pages "Section" "posts" ) }}
