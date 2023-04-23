@@ -1,25 +1,45 @@
-{{/*  Author Page  */}}
+{{/* Author Page */}}
 {{ define "main" }}
 
 <article class="px-20 py-14">
-  {{/*  Title  */}}
-  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">{{ .Title }}</h1>
+  {{/* Title */}}
 
-  {{/*  Extract author from url  */}}
+  {{/* Extract author from url */}}
   {{ $author := index (last 2 (split .Permalink "/")) 0 }}
-  
-  {{/*  List of posts by the author  */}}
+
+  {{ $path := printf "/%s/%s" "authors" ($author | urlize) }}
+  {{ with .Site.GetPage $path }}
+
+  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">
+    {{ if isset .Params "name" }}
+    {{ .Params.name }}
+    {{ else }}
+    {{ replace ($author | title) "-" " " }}
+    {{ end }}
+  </h1>
+
+
+  <p class="prose-darkmode">
+    {{ if isset .Params "bio" }}
+    {{ .Params.bio }}
+    {{ end }}
+  </p>
+  {{ end }}
+
+  <hr class="h-px my-8 bg-gray-800 border-0 dark:bg-gray-700 w-full">
+
+  {{/* List of posts by the author */}}
   <ul class="{{ $author }}">
-      {{ with ($.Site.GetPage (printf "/%s" $author)) }}
-          {{ range .Pages }}
-              <li>
-                <a href="{{ .Permalink }}">
-                  {{ .Date.Format "02 Jan 2006" }}, 
-                  {{ .Title }}
-                </a>
-              </li>
-          {{ end }}
-      {{ end }}
+    {{ with ($.Site.GetPage (printf "/%s" $author)) }}
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}" class="prose-darkmode">
+        {{ .Date.Format "02 Jan 2006" }},
+        {{ .Title }}
+      </a>
+    </li>
+    {{ end }}
+    {{ end }}
   </ul>
 
 </article>
