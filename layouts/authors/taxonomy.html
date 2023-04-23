@@ -5,10 +5,22 @@
   {{/*  Title  */}}
   <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">{{ .Title }}</h1>
 
-  {{/*  Content  */}}
-  <section class="pt-10 pb-16 prose dark:prose-invert transition-colors prose-base">
-      {{ .Content }}
-  </section>
+  {{/*  Extract author from url  */}}
+  {{ $author := index (last 2 (split .Permalink "/")) 0 }}
+  
+  {{/*  List of posts by the author  */}}
+  <ul class="{{ $author }}">
+      {{ with ($.Site.GetPage (printf "/%s" $author)) }}
+          {{ range .Pages }}
+              <li>
+                <a href="{{ .Permalink }}">
+                  {{ .Date.Format "02 Jan 2006" }}, 
+                  {{ .Title }}
+                </a>
+              </li>
+          {{ end }}
+      {{ end }}
+  </ul>
 
 </article>
 
