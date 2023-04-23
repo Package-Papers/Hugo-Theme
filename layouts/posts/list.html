@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="px-20 py-14">
-    {{ range .Pages }}
+    {{ range .Pages.ByDate.Reverse }}
     <section class="project">
       <a href="{{ .RelPermalink }}" class="default-darkmode-text">
         {{ .Title }}, {{ .Params.date.Format "02 Jan 2006" }},
