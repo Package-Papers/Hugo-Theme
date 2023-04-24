@@ -2,8 +2,14 @@
 {{ define "main" }}
 
 <ul>
-  {{ range .Site.Taxonomies.authors }}
-      <li><a href="{{ .Page.RelPermalink }}" class="prose-darkmode">{{ .Page.Title }}</a></li>
+  {{ range $author_name, $val := .Site.Taxonomies.authors }}
+    <li>
+      <a href="{{ $val.Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
+      {{/*  Todo: Refactor this out or restructure so we don't need to do this.  */}}
+      {{ $author := replace ($author_name | title) "-" " " }}
+      {{- partial "author_abbrev" $author }}
+      </a>
+    </li>
   {{ end }}
 </ul>
 
