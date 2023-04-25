@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .default-darkmode-item {
-  @apply bg-slate-300 dark:bg-gray-900 transition-colors;
+  @apply border-slate-400 bg-slate-300 dark:bg-gray-900 transition-colors;
 }
 
 .default-darkmode-item-2 {
@@ -20,4 +20,38 @@
 
 .pointer-ignore {
   @apply pointer-events-none cursor-default;
+}
+
+.tag-btn {
+  text-align: center;
+  display: inline-block;
+  padding: 5px 20px;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position:relative;
+  overflow:hidden;
+  margin: 0 10px 0px 0px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.tag-btn:before {
+  @apply bg-slate-900 dark:bg-slate-300;
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: relative;
+  left: -75px;
+  top: -40px;
+  transform: rotate(37deg);
+  opacity: 0.3;
+  transition: all .5s;
+}
+
+.tag-btn:hover::before {
+  left:100%;
+  transition: all .3s;
 }

@@ -3,7 +3,7 @@
     <section class="py-4">
       <ul>
         {{ range .Site.Taxonomies.tags }}
-          <li class="text-white"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+          <li class="default-darkmode-item default-darkmode-text tag-btn"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
        {{ end }}
      </ul>
     </section>
