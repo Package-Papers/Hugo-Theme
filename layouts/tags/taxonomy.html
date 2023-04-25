@@ -1,0 +1,41 @@
+{{/* Author Page */}}
+{{ define "main" }}
+
+<article class="px-20 py-14">
+  {{/* Title */}}
+
+  {{/* Extract author from url */}}
+  {{ $tag := index (last 2 (split .Permalink "/")) 0 }}
+
+  {{ $path := printf "/%s/%s" "tags" ($tag | urlize) }}
+  {{ with .Site.GetPage $path }}
+  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">
+    {{ $tag | humanize }}
+  </h1>
+
+
+  <p class="prose-darkmode">
+    {{ if isset .Params "bio" }}
+    {{ .Params.bio }}
+    {{ end }}
+  </p>
+  {{ end }}
+  <hr class="h-px my-8 bg-gray-800 border-0 dark:bg-gray-700 w-full">
+
+  {{/* List of posts by the author */}}
+  <ul class="{{ $tag }}">
+    {{ with ($.Site.GetPage (printf "/%s" $tag)) }}
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}" class="prose-darkmode">
+        {{ .Date.Format "02 Jan 2006" }},
+        {{ .Title }}
+      </a>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+
+</article>
+
+{{ end }}
