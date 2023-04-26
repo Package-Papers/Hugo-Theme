@@ -13,7 +13,11 @@
     {{ end }}
   </small>
 
-
+  <ul class="pl-1 py-3">
+    {{ range (.GetTerms "tags") }}
+        <li class="default-darkmode-item default-darkmode-text tag-btn"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
 
 
   {{/*  Content  */}}
