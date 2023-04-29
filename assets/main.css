@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .default-darkmode-item {
   @apply border-slate-400 bg-slate-300 dark:bg-gray-900 transition-colors;
 }
 
 .default-darkmode-item-2 {
-  @apply bg-slate-200 dark:bg-gray-800 transition-colors;
+  @apply bg-slate-200 dark:bg-pink-800 transition-colors;
 }
 
 .default-darkmode-text {
@@ -21,6 +22,7 @@
 .pointer-ignore {
   @apply pointer-events-none cursor-default;
 }
+
 
 .tag-btn {
   text-align: center;
@@ -54,4 +56,20 @@
 .tag-btn:hover::before {
   left:100%;
   transition: all .3s;
+}
+
+.package-paper-icon{
+  @apply fill-neutral-400 items-center ml-4;
+  height: 15px;
+  
+}
+
+
+.content-background{
+  @apply bg-neutral-800 rounded-tl-lg;
+  flex: 1;
+}
+
+body{
+  @apply bg-neutral-900 mt-7;
 }
