@@ -1,0 +1,17 @@
+{{/*  Nav menu (loaded from config.toml) */}}
+<div class="w-64 bg-transparent">
+  <div class="pl-6 pr-2">
+    
+    {{- partial "navbar/navbar_item_header.html" . -}}
+
+    
+    
+    <!-- Authors -->
+    {{ range $key, $val := .Site.Taxonomies.authors }}
+      {{/*  Todo: Refactor this out or restructure so we don't need to do this.  */}}
+      {{ $author := replace ($key | title) "-" " " }}
+      {{- partial "navbar/navbar_item.html" (dict "author" $author "link" $val.Page.RelPermalink) -}}
+    {{ end }}
+    
+  </div>
+</div>
