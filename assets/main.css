@@ -73,3 +73,8 @@
 body{
   @apply bg-neutral-900 mt-7;
 }
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
