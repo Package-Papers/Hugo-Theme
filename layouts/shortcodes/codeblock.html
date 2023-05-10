@@ -1,7 +1,11 @@
-
 <div class="flex flex-col pb-0 rounded-b-lg relative">
-  <div class="prose text-left text-gray-400 bg-gray-800 rounded-t-lg bg-gray-900 absolute -top-1.2 w-full pl-3 3h">
+  <div class="relative bg-gray-800 -mb-7 grid grid-cols-2 rounded-t-lg">
+    <div class="text-gray-400 pl-2">
       {{ .Get "name" }}
+    </div>
+    <div class="text-end text-gray-400 pr-2">
+      Copy
+    </div>
   </div>
   {{ .Inner }}
 </div>
