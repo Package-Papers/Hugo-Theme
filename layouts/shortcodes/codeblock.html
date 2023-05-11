@@ -1,3 +1,16 @@
+{{/*  USAGE:
+    
+{{< codeblock name=<FILE_NAME>>}}
+{{< highlight <LANG_NAME> >}}
+... <- Code here
+{{< /highlight >}}
+{{< /codeblock >}}  
+
+Expects:
+  - FILE_NAME
+  - LANG_NAME
+*/}}
+
 <div class="flex flex-col mb-5 rounded-b-lg">
   <div class="relative">
     {{/*  Top bar  */}}
@@ -11,5 +24,5 @@
     </div>
   </div>
   {{ .Inner }}
-  
 </div>
+
