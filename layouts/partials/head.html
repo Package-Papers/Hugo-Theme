@@ -5,8 +5,11 @@
   {{ $style := resources.Get "style.css" }}    
   <link rel="stylesheet" href="{{ $style.Permalink }}"> 
 
-  {{ $style := resources.Get "syntax.css" }}    
-  <link rel="stylesheet" href="{{ $style.Permalink }}"> 
+  {{ $syntaxStyle := resources.Get "syntax.css" }}    
+  <link rel="stylesheet" href="{{ $syntaxStyle.Permalink }}"> 
+
+  {{ $copyCodeStyle := resources.Get "copy-code-button.css" }}    
+  <link rel="stylesheet" href="{{ $copyCodeStyle.Permalink }}"> 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,3 +1,9 @@
-{{ $themeSwitcher := resources.Get "js/theme-switcher.js" | resources.Minify }}
+
 {{ $icon := resources.Get "icons/Package-Paper-Icon.svg"}}
+
+{{ $codeButton := resources.Get "js/copy-code-button.js" | resources.Minify }}
+<script src="{{ $codeButton.RelPermalink }}" defer></script>
+
+{{ $themeSwitcher := resources.Get "js/theme-switcher.js" | resources.Minify }}
 <script src="{{ $themeSwitcher.RelPermalink }}" defer></script>
+
