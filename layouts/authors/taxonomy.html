@@ -90,7 +90,7 @@
       {{ with ($.Site.GetPage (printf "/%s" $author)) }}
       {{ range .Pages }}
       <li>
-        <a href="{{ .Permalink }}" class="prose-darkmode">
+        <a href="{{ .Permalink }}" class="prose dark:text-black prose-invert transition-colors">
           <section class="postListing relative">
             <div class="listingTitle px-4 w-fit w-36 h-12 bg-white rounded-3xl absolute text-2xl flex items-center justify-center">
               {{ .Title }}

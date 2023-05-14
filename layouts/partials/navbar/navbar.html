@@ -1,11 +1,28 @@
-{{/*  Nav menu (loaded from config.toml) */}}
 <div class="w-64 bg-transparent">
   <div class="pl-6 pr-2">
-    
+  {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
+  {{ if $isPostPage }}
+
+  <li class="py-3 list-none">
+    <a class=" text-neutral-300 font-semibold text-sm tracking-widest ">
+      HEADERS
+    </a>
+  </li>
+    {{ with .Page }}
+    <ul>
+      {{ range $id, $heading := .Fragments.HeadingsMap }}
+      <li class="text-neutral-600 flex border-neutral-600 border-l-2 border-solid relative hover:text-neutral-300 hover:border-neutral-300">
+              <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}">{{ $heading.Title | safeHTML }}</a>
+          </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+
+{{else}}
+
     {{- partial "navbar/navbar_item_header.html" . -}}
 
-    
-    
     <!-- Authors -->
     {{ range $key, $val := .Site.Taxonomies.authors }}
       {{/*  Todo: Refactor this out or restructure so we don't need to do this.  */}}
@@ -13,5 +30,6 @@
       {{- partial "navbar/navbar_item.html" (dict "author" $author "link" $val.Page.RelPermalink) -}}
     {{ end }}
     
+{{end}}
   </div>
 </div>
