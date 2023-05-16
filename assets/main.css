@@ -79,3 +79,74 @@ body{
   border-radius: 50%;
 }
 
+.darkmode-theme-button {
+  width: 34px;
+  height: 12px;
+  top: -31px;
+  left: 1860px;
+  position: relative;
+  display: flex;
+  background: #0A0A0A;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px -1px 0px rgba(255, 255, 255, 0.1);
+  border-radius: 31px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.darkmode-theme-button:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: -2px;
+  top: -4px;
+  background: #262626;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  border-radius: 31px;
+  transition: 0.3s;
+}
+input {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+input:checked + .darkmode-theme-button {
+  background: #F5F5F5;
+}
+input:checked + .darkmode-theme-button:after {
+  left: 36px;
+  transform: translate(-100%);
+  background: #F5F5F5;
+}
+.darkmode-theme-button:active:after {
+  width: 20px;
+}
+.darkmode-theme-button svg.moon {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  left: 3px;
+  top: 1px;
+  z-index: 1000;
+  fill:#D4D4D4;
+  transition: 0.1s;
+}
+.darkmode-theme-button svg.sun {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  left: 23px;
+  top: 1px;
+  z-index: 1000;
+  fill: #A3A3A3;
+  opacity: 0;
+  transition: 0.1s;
+}
+input:checked + .darkmode-theme-button svg.moon {
+  opacity: 0;
+}
+input:checked + .darkmode-theme-button svg.sun {
+  opacity: 1;
+}
+
+
+
