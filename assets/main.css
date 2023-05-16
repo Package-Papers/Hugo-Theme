@@ -82,9 +82,9 @@ body{
 .darkmode-theme-button {
   width: 34px;
   height: 12px;
-  top: -31px;
-  left: 1860px;
-  position: relative;
+  top: -20px;
+  right: 7px;
+  position: absolute;
   display: flex;
   background: #0A0A0A;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px -1px 0px rgba(255, 255, 255, 0.1);
