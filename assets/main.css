@@ -148,5 +148,26 @@ input:checked + .darkmode-theme-button svg.sun {
   opacity: 1;
 }
 
+/*
+ * The custom scrollbar is used for the body of the main content of the page. 
+ */
 
+.customScrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.customScrollbar::-webkit-scrollbar-track {
+  @apply bg-inherit;
+}
+
+/* Handle */
+.customScrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.customScrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 

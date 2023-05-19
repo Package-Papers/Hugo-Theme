@@ -2,14 +2,14 @@
 <html>
     {{- partial "head.html" . -}}
     
-    <body class="flex relative h-full min-h-screen">
+    <body class="flex relative h-full min-h-screen overflow-hidden">
         {{- partial "header.html" . -}}
 
 
         {{- partial "navbar/navbar.html" . -}}
 
         {{/*  Content  */}}
-        <div class=" h-screen content-background overflow-y-auto overscroll-contain">  
+        <div class=" h-screen content-background overflow-y-auto overscroll-contain customScrollbar">  
         {{- block "main" . }}{{- end }}
         </div>
 
