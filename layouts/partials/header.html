@@ -1,11 +1,13 @@
-<div>
-  {{- partial "darkmode-button" -}}
-</div>
+<div class="flex flex-row h-7 justify-between">
+    <div class="
+    bg-transparent items-center pt-0.5 flex flex-row">
+      {{ partial "helper/svg" "package-paper-icon" }}
+      <div class=" ml-2 font-sans font-bold text-sm  tracking-wide flex text-neutral-400">
+          Package-Papers
+      </div>
+    </div> 
 
-<div class="
-bg-transparent fixed top-0 left-0 right-0 h-7 flex items-center pt-0.5">
-  {{ partial "helper/svg" "package-paper-icon" }}
-  <div class=" ml-2 font-sans font-bold text-sm  tracking-wide flex text-neutral-400">Package-Papers
+    <div class="mr-5 items-center" >
+      {{- partial "darkmode-button" -}}
+    </div>
   </div>
-</div>
-
