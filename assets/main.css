@@ -242,7 +242,7 @@ input:checked + .darkmode-theme-button svg.sun {
 .profilePic {
   width: clamp(50px, calc(12vw + 50px), 1500px);
   height: clamp(50px, calc(12vw + 50px), 1500px);
-  box-shadow: 0px 0px 30px 1px var(--grey);
+  @apply shadow-slate-500;
 }
 
 .social {
@@ -262,7 +262,7 @@ input:checked + .darkmode-theme-button svg.sun {
   font-size: 20px;
   opacity: 0;
   transition: 200ms ease-in-out;
-  @apply text-neutral-600 dark:text-neutral-400;
+  @apply text-neutral-600 dark:text-neutral-400 transition-colors;
 }
 .social:hover ~ .socialTxt {
   opacity: 1;
@@ -271,27 +271,28 @@ input:checked + .darkmode-theme-button svg.sun {
 }
 
 .bioContainer {
-  box-shadow: 0px 0px 15px -2px;
+  box-shadow: 0px 0px 2px -2px;
   border-radius: 15px;
   padding: 20px;
-  @apply bg-neutral-400 dark:bg-neutral-200 dark:text-neutral-800 text-neutral-400;
+  @apply bg-neutral-300 dark:bg-neutral-900 transition-colors dark:text-neutral-200 text-black;
 }
 
 .postListing {
-  background-color: var(--grey);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0px 0px 15px -2px black;
   width: 350px;
   height: 250px;
   transition: 500ms ease;
+  @apply bg-neutral-300 dark:bg-neutral-400;
 }
 .postListing:hover {
   transform: translateY(-10px) scale(102%);
   transition: 200ms ease;
+  /* @apply ease */
 }
 .listingTitle {
   left: -20px; 
   padding-left: 30px;
-  background-color: var(--white);
+  @apply bg-neutral-700 dark:bg-white text-white dark:text-black prose-invert transition-colors;
 }
