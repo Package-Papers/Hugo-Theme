@@ -75,11 +75,18 @@
   border-radius: 50%;
 }
 
+.darkmode-button-position {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
 .darkmode-theme-button {
   width: 34px; 
   height: 12px;
   top: -20px;
-  right: 7px;
+  left: 50%;
+  position: relative;
   display: flex;
   background: #0A0A0A;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px -1px 0px rgba(255, 255, 255, 0.1);
@@ -91,9 +98,9 @@
   content: "";
   width: 18px;
   height: 18px;
-  position: absolute;
-  right: -8px;
-  top: 8px;
+  position: relative;
+  right: 63%;
+  top: -3px;
   background: #262626;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
   border-radius: 31px;
@@ -108,7 +115,7 @@ input:checked + .darkmode-theme-button {
   background: #F5F5F5;
 }
 input:checked + .darkmode-theme-button:after {
-  transform: translate(-100%);
+  transform: translate(120%);
   background: #F5F5F5;
 }
 .darkmode-theme-button:active:after {
@@ -128,16 +135,17 @@ input:checked + .darkmode-theme-button:after {
   width: 9px;
   height: 9px;
   top: 1px;
+  left: 40%;
   z-index: 1000;
   fill: #A3A3A3;
   opacity: 0;
   transition: 0.1s;
 }
 input:checked + .darkmode-theme-button svg.moon {
-  opacity: 1;
+  opacity: 0;
 }
 input:checked + .darkmode-theme-button svg.sun {
-  opacity: 0;
+  opacity: 1;
 }
 
 /*
