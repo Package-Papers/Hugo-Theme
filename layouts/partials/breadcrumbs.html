@@ -14,11 +14,13 @@
                 {{ $link := .RelPermalink }}
                 {{ $name := $.Param "name" }}
                 {{with partial "author_abbrev" $name }}
-                    <li><a href={{$link}}>{{print "/" " " .}} </a></li>
+                    <li>{{"/"}}</li>
+                    <li><a href={{$link}}>{{.}} </a></li>
                 {{end}}
             
             {{else }}
-                <li><a href="{{ .RelPermalink }}">/ {{ replaceRE "(\\s)" "" .Title }}</a></li>
+                <li>{{"/"}}</li>
+                <li><a href="{{ .RelPermalink }}">{{ replaceRE "(\\s)" "" .Title }}</a></li>
             {{ end }}
         {{ end }}
 
@@ -26,7 +28,8 @@
             {{ $link := .RelPermalink }}
             {{ $name := $.Param "name" }}
             {{with partial "author_abbrev" $name }}
-                <li><a href={{$link}}>{{print "/" " " .}} </a></li>
+                <li>{{"/"}}</li>
+                <li><a href={{$link}}>{{.}} </a></li>
             {{end}}
         {{ else if eq (.Site.GetPage "") .Page }}
             <li><a href="{{ .RelPermalink }}"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
