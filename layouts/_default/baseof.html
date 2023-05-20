@@ -8,6 +8,7 @@
           {{- partial "navbar/navbar.html" . -}}
           {{/*  Content  */}}
           <div class=" h-screen content-background overflow-y-auto overscroll-contain customScrollbar">  
+            {{ partial "breadcrumbs.html" . }}
             {{- block "main" . }}{{- end }}
           </div>
           {{- partial "footer.html" . -}}

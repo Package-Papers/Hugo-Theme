@@ -171,3 +171,46 @@ input:checked + .darkmode-theme-button svg.sun {
   background: #555;
 }
 
+.bread-crumbs {
+  position: relative;
+  left: 15px;
+  top: 17px;
+}
+
+.bread-crumbs ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 6px 11px;
+  width: fit-content;
+  gap: 4px;
+
+  /* Neutral 700 */
+
+  background: #404040;
+  border-radius: 15px;
+}
+
+.bread-crumbs ul li a {
+  width: 32px;
+  height: 14px;
+  font-family: 'Inter';
+  font-style: normal;
+  /* font-weight: 400; */
+  /* font-size: 12px; */
+  line-height: -120%;
+  /* or 14px */
+  letter-spacing: 0.01em;
+
+  /* Neutral 400 */
+
+  color: #A3A3A3;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
