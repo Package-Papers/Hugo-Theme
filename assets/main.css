@@ -15,6 +15,10 @@
   @apply text-black dark:text-white transition-colors;
 }
 
+.default-darkmode-fill {
+  @apply fill-black dark:fill-white transition-colors;
+}
+
 .prose-darkmode {
   @apply prose dark:prose-invert transition-colors;
 }
@@ -148,6 +152,8 @@ input:checked + .darkmode-theme-button svg.sun {
   opacity: 1;
 }
 
+/* Custom SCrollbar */
+
 /*
  * The custom scrollbar is used for the body of the main content of the page. 
  */
@@ -163,12 +169,12 @@ input:checked + .darkmode-theme-button svg.sun {
 
 /* Handle */
 .customScrollbar::-webkit-scrollbar-thumb {
-  background: #888;
+  @apply dark:bg-neutral-500 bg-neutral-700;
 }
 
 /* Handle on hover */
 .customScrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  @apply dark:bg-neutral-600 bg-neutral-900;
 }
 
 .bread-crumbs {
@@ -214,3 +220,69 @@ input:checked + .darkmode-theme-button svg.sun {
 }
 
 
+/* AUTHOR PAGE */
+/* :root {
+  --white: #D9D9D9;
+  --grey: #7C7C7C;
+} */
+
+.name {
+  font-size: clamp(25px, calc(5vw - 10px), 70px);
+  @apply text-black dark:text-white transition-colors;
+}
+.profilePic {
+  width: clamp(50px, calc(12vw + 50px), 1500px);
+  height: clamp(50px, calc(12vw + 50px), 1500px);
+  box-shadow: 0px 0px 30px 1px var(--grey);
+}
+
+.social {
+  width: clamp(25px, calc(5vw - 10px), 54px);
+  transition: 500ms ease;
+  @apply default-darkmode-fill
+}
+.social:hover {
+  transform: scale(110%);
+  transition: 200ms ease;
+}
+.socialTxt {
+  transform: translateY(70px);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+  font-size: 20px;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  @apply text-neutral-600 dark:text-neutral-400;
+}
+.social:hover ~ .socialTxt {
+  opacity: 1;
+  transform: translateY(60px);
+  font-size: 15px;
+}
+
+.bioContainer {
+  box-shadow: 0px 0px 15px -2px;
+  border-radius: 15px;
+  padding: 20px;
+  @apply bg-neutral-400 dark:bg-neutral-200 dark:text-neutral-800 text-neutral-400;
+}
+
+.postListing {
+  background-color: var(--grey);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px -2px black;
+  width: 350px;
+  height: 250px;
+  transition: 500ms ease;
+}
+.postListing:hover {
+  transform: translateY(-10px) scale(102%);
+  transition: 200ms ease;
+}
+.listingTitle {
+  left: -20px; 
+  padding-left: 30px;
+  background-color: var(--white);
+}

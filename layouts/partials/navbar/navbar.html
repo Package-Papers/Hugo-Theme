@@ -4,16 +4,18 @@
   {{ if $isPostPage }}
 
   <li class="py-3 list-none">
-    <a class=" text-neutral-300 font-semibold text-sm tracking-widest ">
+    <a class="text-neutral-800 dark:text-neutral-300 transition-colors font-semibold text-sm tracking-widest">
       HEADERS
     </a>
   </li>
     {{ with .Page }}
     <ul>
       {{ range $id, $heading := .Fragments.HeadingsMap }}
-      <li class="text-neutral-600 flex border-neutral-600 border-l-2 border-solid relative hover:text-neutral-300 hover:border-neutral-300">
-              <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}">{{ $heading.Title | safeHTML }}</a>
-          </li>
+      <li class="text-neutral-500 dark:text-neutral-600 flex border-neutral-400 dark:border-neutral-600 border-l-2 border-solid relative hover:text-neutral-900 dark:hover:text-neutral-300 dark:hover:border-neutral-300 hover:border-neutral-900">
+        <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}">
+          {{ $heading.Title | safeHTML }}
+        </a>
+      </li>
       {{ end }}
     </ul>
     {{ end }}
