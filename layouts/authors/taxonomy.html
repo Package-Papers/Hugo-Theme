@@ -82,7 +82,7 @@
 
   <section class="flex justify-center flex-col items-center gap-6">
     <p class="text-2xl text-white">
-      Projects involved in
+      Posts
     </p>
 
     {{/* List of posts by the author */}}
@@ -90,19 +90,19 @@
       {{ with ($.Site.GetPage (printf "/%s" $author)) }}
       {{ range .Pages }}
       <li>
-        <a href="{{ .Permalink }}" class="prose dark:text-black prose-invert transition-colors">
+        <a href="{{ .Permalink }}" class="prose">
           <section class="postListing relative">
             <div class="listingTitle px-4 w-fit w-36 h-12 bg-white rounded-3xl absolute text-2xl flex items-center justify-center">
               {{ .Title }}
             </div>
-            <ul class="absolute top-16 left-0 flex flex-col ">
+            <ul class="absolute top-16 left-0 flex flex-col list-none">
               {{ range $author := .Page.Params.authors }}
-              <li class="h-5">
+              <li class="h-5 prose transition-colors">
                 {{ $author }}
               </li>
               {{ end }}
             </ul>
-            <div class="absolute bottom-0 right-0 mx-4 my-2 text-lg">
+            <div class="absolute bottom-0 right-0 mx-4 my-2 text-lg prose">
               {{ .Date.Format "02 Jan 2006" }}
             </div>
           </section>
