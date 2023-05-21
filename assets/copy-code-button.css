@@ -1,12 +1,16 @@
+
 .copy-code-button {
   z-index: 2;
   white-space: nowrap;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .copy-code-button:hover,
-.copy-code-button:focus,
+.copy-code-button:focus {
+  opacity: 0.6;
+}
+
 .copy-code-button:active,
 .copy-code-button:active:hover {
   opacity: 1.0;
