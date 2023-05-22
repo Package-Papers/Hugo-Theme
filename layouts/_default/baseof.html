@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body class="overflow-hidden">
+    <body class="">
       <div class="flex flex-col h-full min-h-screen bg-neutral-300 dark:bg-neutral-900 transition-colors">
         {{- partial "header.html" . -}}
         <div class="flex flex-row">
@@ -10,8 +10,9 @@
           <div class=" h-screen content-background overflow-y-auto overscroll-contain customScrollbar">  
             {{ partial "breadcrumbs.html" . }}
             {{- block "main" . }}{{- end }}
-          </div>
           {{- partial "footer.html" . -}}
+
+          </div>
         </div>
       </div>
       {{- partial "scripts.html" . -}}
