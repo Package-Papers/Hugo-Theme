@@ -7,7 +7,3 @@
 {{ $themeSwitcher := resources.Get "js/theme-switcher.js" | resources.Minify }}
 <script src="{{ $themeSwitcher.RelPermalink }}" defer></script>
 
-<script>
-  savedTheme = localStorage.getItem('theme') || 'dark';
-  document.body.classList.toggle('dark', savedTheme === 'dark');
-</script>
