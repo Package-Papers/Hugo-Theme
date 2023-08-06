@@ -9,7 +9,7 @@
         <div class="flex flex-row">
           {{- partial "navbar/navbar.html" . -}}
           {{/*  Content  */}}
-          <div class=" h-screen content-background overflow-y-auto overscroll-contain customScrollbar">  
+          <div class="fixed left-64 top-8 right-0 bottom-0 content-background overflow-y-scroll overflow-x-hidden overscroll-contain customScrollbar">  
             {{ partial "breadcrumbs.html" . }}
             {{- block "main" . }}{{- end }}
           {{- partial "footer.html" . -}}
