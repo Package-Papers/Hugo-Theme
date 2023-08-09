@@ -1,4 +1,4 @@
-<div class="fixed w-64 bg-transparent top-8 ">
+<aside class="hidden lg:block fixed left-0 w-64 bg-transparent top-8 transition-transform ">
   <div class="pl-6 pr-2">
   {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
   {{ if $isPostPage }}
@@ -36,4 +36,4 @@
     
 {{end}}
   </div>
-</div>
+</aside>
