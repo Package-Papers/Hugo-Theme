@@ -1,20 +1,21 @@
-<head>  
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>{{ .Site.Title }}</title>
-  {{ $style := resources.Get "style.css" }}    
-  <link rel="stylesheet" href="{{ $style.Permalink }}"> 
+  {{ $style := resources.Get "style.css" }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
 
-  {{ $syntaxStyle := resources.Get "syntax.css" }}    
-  <link rel="stylesheet" href="{{ $syntaxStyle.Permalink }}"> 
+  {{ $syntaxStyle := resources.Get "syntax.css" }}
+  <link rel="stylesheet" href="{{ $syntaxStyle.Permalink }}">
 
-  {{ $copyCodeStyle := resources.Get "copy-code-button.css" }}    
-  <link rel="stylesheet" href="{{ $copyCodeStyle.Permalink }}"> 
+  {{ $copyCodeStyle := resources.Get "copy-code-button.css" }}
+  <link rel="stylesheet" href="{{ $copyCodeStyle.Permalink }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-  {{/*  alpinejs  */}}
+  {{/* alpinejs */}}
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>

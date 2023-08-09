@@ -1,20 +1,22 @@
-<div class="fixed left-0 top-0 flex flex-row h-8 min-w-full min-h-fit justify-between overflow-hidden bg-neutral-300 dark:bg-neutral-900">
-              <button class="lg:hidden p-1 mr-4" @click="sidebarOpen = !sidebarOpen">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="h-6 w-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
+<div
+  class="fixed left-0 top-0 flex flex-row h-8 min-w-full min-h-fit justify-between overflow-hidden bg-neutral-300 dark:bg-neutral-900">
+  <button class="lg:hidden p-1 mr-4" @click="sidebarOpen = !sidebarOpen">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="h-6 w-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 
-    <div class="
+  <div class="
     bg-transparent items-center pt-0.5 flex flex-row overflow-hidden min-h-fit">
-      {{ partial "helper/svg" "package-paper-icon" }}
-      <div class="min-h-fit min-w-full ml-2 font-sans font-bold text-sm  tracking-wide flex text-neutral-700 dark:text-neutral-400 transition-colors">
-        <a href="/" class="min-h-full"> Package-Papers </a>
-      </div>
-    </div> 
-
-    {{/*  TODO: Fix this.  */}}
-    {{/*  <div class="darkmode-button-position" >
-      {{- partial "darkmode-button" -}}
-    </div>  */}}
+    {{ partial "helper/svg" "package-paper-icon" }}
+    <div
+      class="min-h-fit min-w-full ml-2 font-sans font-bold text-sm  tracking-wide flex text-neutral-700 dark:text-neutral-400 transition-colors">
+      <a href="/" class="min-h-full"> Package-Papers </a>
+    </div>
   </div>
+
+  {{/* TODO: Fix this. */}}
+  {{/* <div class="darkmode-button-position">
+    {{- partial "darkmode-button" -}}
+  </div> */}}
+</div>

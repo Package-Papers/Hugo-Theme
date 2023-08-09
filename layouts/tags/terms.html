@@ -1,15 +1,15 @@
-{{/*  Author Listing Page  */}}
+{{/* Author Listing Page */}}
 {{ define "main" }}
 
 <ul>
   {{ range $author_name, $val := .Site.Taxonomies.authors }}
-    <li>
-      <a href="{{ $val.Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
-      {{/*  Todo: Refactor this out or restructure so we don't need to do this.  */}}
+  <li>
+    <a href="{{ $val.Page.RelPermalink }}" class="pl-5 prose-darkmode text-sm">
+      {{/* Todo: Refactor this out or restructure so we don't need to do this. */}}
       {{ $author := replace ($author_name | title) "-" " " }}
       {{- partial "author_abbrev" $author }}
-      </a>
-    </li>
+    </a>
+  </li>
   {{ end }}
 </ul>
 

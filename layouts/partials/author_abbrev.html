@@ -4,5 +4,3 @@
 {{ $last_initial := substr (index $name 1) 0 1 }}
 {{ $full_name := print $first_name " " $last_initial "."}}
 {{ return $full_name }}
-
-

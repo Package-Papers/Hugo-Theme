@@ -1,30 +1,31 @@
 {{ define "main" }}
 <article class="px-20 py-14">
-    <section class="py-4">
-      <ul>
-        {{ range .Site.Taxonomies.tags }}
-          <li class="default-darkmode-item default-darkmode-text tag-btn"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-       {{ end }}
-     </ul>
-    </section>
-
-    {{ $posts := (where .Pages "Section" "posts" ) }}
-
-    {{ if (eq (len $posts) 0 )}}
-      <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">No posts found</h1>
-    {{ else }}
-      {{ range $posts.ByDate.Reverse }}
-      <section class="project">
-        <a href="{{ .RelPermalink }}" class="default-darkmode-text">
-          {{ .Title }}, {{ .Params.date.Format "02 Jan 2006" }},
-          {{ range $index, $author := .Params.authors }}
-          {{ if $index }}, {{ end }}
-          {{ $fmt_author := replace (lower .) " " "-" }}
-          {{- partial "author_abbrev" $author -}}
-        {{ end }}
-        </a>
-      </section>
+  <section class="py-4">
+    <ul>
+      {{ range .Site.Taxonomies.tags }}
+      <li class="default-darkmode-item default-darkmode-text tag-btn"><a href="{{ .Page.Permalink }}">{{ .Page.Title
+          }}</a> {{ .Count }}</li>
       {{ end }}
-    {{ end }}
+    </ul>
+  </section>
+
+  {{ $posts := (where .Pages "Section" "posts" ) }}
+
+  {{ if (eq (len $posts) 0 )}}
+  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">No posts found</h1>
+  {{ else }}
+  {{ range $posts.ByDate.Reverse }}
+  <section class="project">
+    <a href="{{ .RelPermalink }}" class="default-darkmode-text">
+      {{ .Title }}, {{ .Params.date.Format "02 Jan 2006" }},
+      {{ range $index, $author := .Params.authors }}
+      {{ if $index }}, {{ end }}
+      {{ $fmt_author := replace (lower .) " " "-" }}
+      {{- partial "author_abbrev" $author -}}
+      {{ end }}
+    </a>
+  </section>
+  {{ end }}
+  {{ end }}
 </article>
 {{ end }}

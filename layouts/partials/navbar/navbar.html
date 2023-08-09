@@ -1,18 +1,20 @@
-<aside class="fixed min-h-full left-0 w-64 bg-inherit top-8 transition-transform -translate-x-full lg:translate-x-0 z-10" 
-:class="{ ' translate-x-0 dark:bg-neutral-90 z-10': sidebarOpen }">
+<aside
+  class="fixed min-h-full left-0 w-64 bg-inherit top-8 transition-transform -translate-x-full lg:translate-x-0 z-10"
+  :class="{ ' translate-x-0 dark:bg-neutral-90 z-10': sidebarOpen }">
   <div class="pl-6 pr-2">
-  {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
-  {{ if $isPostPage }}
+    {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
+    {{ if $isPostPage }}
 
-  <li class="py-3 list-none">
-    <a class="text-neutral-800 dark:text-neutral-300 transition-colors font-semibold text-sm tracking-widest">
-      HEADERS
-    </a>
-  </li>
+    <li class="py-3 list-none">
+      <a class="text-neutral-800 dark:text-neutral-300 transition-colors font-semibold text-sm tracking-widest">
+        HEADERS
+      </a>
+    </li>
     {{ with .Page }}
     <ul>
       {{ range $id, $heading := .Fragments.HeadingsMap }}
-      <li class="text-neutral-500 dark:text-neutral-600 flex border-neutral-400 dark:border-neutral-600 border-l-2 border-solid relative hover:text-neutral-900 dark:hover:text-neutral-300 dark:hover:border-neutral-300 hover:border-neutral-900">
+      <li
+        class="text-neutral-500 dark:text-neutral-600 flex border-neutral-400 dark:border-neutral-600 border-l-2 border-solid relative hover:text-neutral-900 dark:hover:text-neutral-300 dark:hover:border-neutral-300 hover:border-neutral-900">
         <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}" @click="sidebarOpen = false">
           {{ $heading.Title | safeHTML }}
         </a>
@@ -22,7 +24,7 @@
     {{ end }}
 
 
-{{else}}
+    {{else}}
 
     {{- partial "navbar/navbar_item_posts.html" . -}}
 
@@ -30,11 +32,11 @@
 
     <!-- Authors -->
     {{ range $key, $val := .Site.Taxonomies.authors }}
-      {{/*  Todo: Refactor this out or restructure so we don't need to do this.  */}}
-      {{ $author := replace ($key | title) "-" " " }}
-      {{- partial "navbar/navbar_item.html" (dict "author" $author "link" $val.Page.RelPermalink) -}}
+    {{/* Todo: Refactor this out or restructure so we don't need to do this. */}}
+    {{ $author := replace ($key | title) "-" " " }}
+    {{- partial "navbar/navbar_item.html" (dict "author" $author "link" $val.Page.RelPermalink) -}}
     {{ end }}
-    
-{{end}}
+
+    {{end}}
   </div>
 </aside>

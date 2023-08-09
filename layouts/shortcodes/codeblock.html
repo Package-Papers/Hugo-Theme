@@ -1,28 +1,27 @@
-{{/*  USAGE:
-    
+{{/* USAGE:
+
 {{< codeblock name=<FILE_NAME>>}}
-{{< highlight <LANG_NAME> >}}
-... <- Code here
-{{< /highlight >}}
-{{< /codeblock >}}  
+  {{< highlight <LANG_NAME> >}}
+    ... <- Code here {{< /highlight>}}
+      {{< /codeblock>}}
 
-Expects:
-  - FILE_NAME
-  - LANG_NAME
-*/}}
+        Expects:
+        - FILE_NAME
+        - LANG_NAME
+        */}}
 
-<div class="flex flex-col mb-5 rounded-b-lg">
-  <div class="relative">
-    {{/*  Top bar  */}}
-    <div class="flex justify-between items-center bg-[#171717] -mb-7 rounded-t-lg h-[24px] z-40 translate-y-[4px] relative">
-      <div class="prose flex text-gray-400 text-sm pl-[11px] text-[10px]">
-        {{ .Get "name" }}
-      </div>
-      <div class="copy-button-holder flex pr-[11px] pt-[7px] pb-[6px]" >
-        {{/* Copy button svg gets inserted here */}}
-      </div>
-    </div>
-  </div>
-  {{ .Inner }}
-</div>
-
+        <div class="flex flex-col mb-5 rounded-b-lg">
+          <div class="relative">
+            {{/* Top bar */}}
+            <div
+              class="flex justify-between items-center bg-[#171717] -mb-7 rounded-t-lg h-[24px] z-40 translate-y-[4px] relative">
+              <div class="prose flex text-gray-400 text-sm pl-[11px] text-[10px]">
+                {{ .Get "name" }}
+              </div>
+              <div class="copy-button-holder flex pr-[11px] pt-[7px] pb-[6px]">
+                {{/* Copy button svg gets inserted here */}}
+              </div>
+            </div>
+          </div>
+          {{ .Inner }}
+        </div>
