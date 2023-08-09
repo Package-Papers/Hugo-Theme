@@ -179,9 +179,8 @@ input:checked + .darkmode-theme-button svg.sun {
 
 .bread-crumbs {
   position: relative;
-  left: 15px;
   top: 17px;
-  
+  margin-left: 5%;
 }
 
 .bread-crumbs ul {
@@ -189,7 +188,8 @@ input:checked + .darkmode-theme-button svg.sun {
   flex-direction: row;
   align-items: flex-start;
   padding: 6px 11px;
-  width: fit-content;
+  width: max-content;
+  max-width: 95%;
   gap: 4px;
 
   /* Neutral 700 */
@@ -199,7 +199,7 @@ input:checked + .darkmode-theme-button svg.sun {
 }
 
 .bread-crumbs ul li {
-  @apply text-neutral-600 dark:text-neutral-400;
+  @apply text-neutral-600 dark:text-neutral-400 max-w-prose;
 }
 
 .bread-crumbs ul li a {

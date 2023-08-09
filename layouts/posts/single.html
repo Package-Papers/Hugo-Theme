@@ -1,7 +1,7 @@
 {{ define "main" }}
-<article class="px-20 py-14 bg-inherit">
+<article class="px-1 py-8 lg:px-20 lg:py-14 md:px-20 md:py-14  bg-inherit">
   {{/*  Title  */}}
-  <h1 class="default-darkmode-text text-[48px] font-semibold -mb-1">{{ .Title }}</h1>
+  <h1 class="default-darkmode-text text-[32px] lg:text-[48px] font-semibold -mb-1">{{ .Title }}</h1>
 
   {{/* Date, Authors */}}
   <small class="text-sm pl-1 text-slate-500 dark:text-gray-400">
@@ -13,12 +13,12 @@
     {{ end }}
   </small>
 
+  {{/*  Tags   */}}
   <ul class="pl-1 py-3">
     {{ range (.GetTerms "tags") }}
         <li class="default-darkmode-item default-darkmode-text tag-btn"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
-
 
   {{/*  Content  */}}
   <section class="pt-10 pb-16 prose dark:prose-invert transition-colors prose-base">
@@ -28,7 +28,7 @@
   {{/*  Comment Section  */}}
   <div class="w-full bg-inherit">
     <hr class="h-px my-8 bg-neutral-900 border-0 dark:bg-neutral-300">
-    <section class="w-[75%] bg-inherit">
+    <section class="w-full lg:w-[75%] bg-inherit">
       <h1 class="default-darkmode-text text-[32px] font-semibold">Comments</h1>
       {{ partial "comments" . }}
     </section>

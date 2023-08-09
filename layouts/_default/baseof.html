@@ -4,12 +4,12 @@
     <body class="overflow-hidden">
       {{- partial "helper/load_guard" . -}}
       
-      <div class="flex flex-col h-full min-h-screen bg-neutral-300 dark:bg-neutral-900 transition-colors">
+      <div class="flex flex-col min-w-full min-h-screen bg-neutral-300 dark:bg-neutral-900 transition-colors">
         {{- partial "header.html" . -}}
         <div class="flex flex-row">
           {{- partial "navbar/navbar.html" . -}}
           {{/*  Content  */}}
-          <div class="fixed left-64 top-8 right-0 bottom-0 content-background overflow-y-scroll overflow-x-hidden overscroll-contain customScrollbar">  
+          <div class="fixed max-w-full bottom-0 lg:left-64 top-8 md:right-0 lg:right-0 content-background overflow-y-scroll overflow-x-hidden overscroll-contain customScrollbar">  
             {{ partial "breadcrumbs.html" . }}
             {{- block "main" . }}{{- end }}
           {{- partial "footer.html" . -}}
