@@ -8,7 +8,7 @@
         {{- partial "header.html" . -}}
           {{- partial "navbar/navbar.html" . -}}
           {{/*  Content  */}}
-          <div class="fixed top-8 bottom-0 w-full content-background overflow-y-scroll overflow-x-hidden customScrollbar transition-transform translate-x-0 lg:translate-x-64"
+          <div class="fixed top-8 bottom-0 w-full lg:w-[calc(100%-16rem)] content-background overflow-y-scroll overflow-x-hidden customScrollbar transition-transform translate-x-0 lg:translate-x-64"
           :class="{ 'sm:translate-x-0 md:translate-x-0': sidebarOpen }">  
             <div class="max-h-full">
               {{ partial "breadcrumbs.html" . }}
