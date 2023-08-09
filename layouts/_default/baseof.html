@@ -4,15 +4,16 @@
     <body class="overflow-hidden">
       {{- partial "helper/load_guard" . -}}
       
-      <div class="flex flex-col min-w-full min-h-screen max-h-screen bg-neutral-300 dark:bg-neutral-900 transition-colors">
+      <div x-data="{ sidebarOpen: false }" class="flex flex-col min-w-full min-h-screen max-h-screen bg-neutral-300 dark:bg-neutral-900 transition-colors">
         {{- partial "header.html" . -}}
           {{- partial "navbar/navbar.html" . -}}
           {{/*  Content  */}}
-          <div class="mt-8 ml-0 lg:ml-64 content-background overflow-y-scroll overflow-x-hidden customScrollbar">  
-            <div class="max-h-full ">
-            {{ partial "breadcrumbs.html" . }}
-            {{- block "main" . }}{{- end }}
-            {{- partial "footer.html" . -}}
+          <div class="mt-8 content-background overflow-y-scroll overflow-x-hidden customScrollbar transition-transform translate-x-0 lg:translate-x-64"
+          :class="{ 'sm:translate-x-0 md:translate-x-0': sidebarOpen }">  
+            <div class="max-h-full">
+              {{ partial "breadcrumbs.html" . }}
+              {{- block "main" . }}{{- end }}
+              {{- partial "footer.html" . -}}
             </div>
           </div>
       </div>

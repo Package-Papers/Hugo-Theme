@@ -1,4 +1,5 @@
-<aside class="hidden lg:block fixed left-0 w-64 bg-transparent top-8 transition-transform ">
+<aside class="fixed min-h-full left-0 w-64 bg-inherit top-8 transition-transform -translate-x-full lg:translate-x-0 z-10" 
+:class="{ ' translate-x-0 dark:bg-neutral-90 z-10': sidebarOpen }">
   <div class="pl-6 pr-2">
   {{ $isPostPage := and (.IsPage) (eq .Type "posts") }}
   {{ if $isPostPage }}
@@ -12,7 +13,7 @@
     <ul>
       {{ range $id, $heading := .Fragments.HeadingsMap }}
       <li class="text-neutral-500 dark:text-neutral-600 flex border-neutral-400 dark:border-neutral-600 border-l-2 border-solid relative hover:text-neutral-900 dark:hover:text-neutral-300 dark:hover:border-neutral-300 hover:border-neutral-900">
-        <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}">
+        <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}" @click="sidebarOpen = false">
           {{ $heading.Title | safeHTML }}
         </a>
       </li>
