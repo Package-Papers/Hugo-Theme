@@ -15,8 +15,11 @@
       {{ range $id, $heading := .Fragments.HeadingsMap }}
       <li
         class="text-neutral-500 dark:text-neutral-600 flex border-neutral-400 dark:border-neutral-600 border-l-2 border-solid relative hover:text-neutral-900 dark:hover:text-neutral-300 dark:hover:border-neutral-300 hover:border-neutral-900">
-        <a class="display: inline-block text-lg p-2 mt-2Z" href="#{{ $id }}" @click="sidebarOpen = false">
-          {{ $heading.Title | safeHTML }}
+        <a class="display: inline-block text-lg flex-shrink-0 p-2 mt-2Z" href="#{{ $id }}" @click="sidebarOpen = false">
+          {{/*  {{ $heading.Title | safeHTML }}  */}}
+          {{ $heading.Title }}
+          {{/*  {{ $id }}  */}}
+          
         </a>
       </li>
       {{ end }}
